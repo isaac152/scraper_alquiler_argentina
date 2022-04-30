@@ -1,0 +1,7 @@
+itemadapter
+matplotlib
+numpy
+pandas
+Scrapy
+Unidecode
+
