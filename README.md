@@ -19,7 +19,7 @@ python -m pip install -r requirements.txt
 
 ## Introducción
 
-Se decidió obtener información de los alquileres dentro de Capital federal. Argentina.
+Se decidió obtener información de los alquileres dentro de Capital Federal. Argentina.
 
 Las páginas scrapeadas fueron las siguientes:
 
@@ -27,13 +27,13 @@ Las páginas scrapeadas fueron las siguientes:
  2. Argenprop
  3. Properati
 
-Se considerá un Item scrapeado exitoso si cumple con las siguientes condiciones:
+Se considerará un Item scrapeado exitoso si cumple con las siguientes condiciones:
 
- - Tiene imágenes (Nadie quiere alquiler un apartamento sin verlo)
+ - Tiene imágenes (Nadie quiere alquilar un apartamento sin verlo)
  - Describe la ubicación del apartamento.
  - Posee los metros cuadrados del apartamento
  - Describe los ambientes y/o dormitorios.
- - Tiene precio  (Obviamente, jeje) y no está en dólares.
+ - Tiene precio (Obviamente, jeje) en ARS (se excluirá alquileres en doláres).
 
 ## Item
 
