@@ -15,9 +15,9 @@ source env/bin/activate
 python -m pip install -r requirements.txt
 ```
 
-## **Descripción**
+# **Descripción**
 
-### Introducción
+## Introducción
 
 Se decidió obtener información de los alquileres dentro de Capital federal. Argentina.
 
@@ -35,7 +35,7 @@ Se considerá un Item scrapeado exitoso si cumple con las siguientes condiciones
  - Describe los ambientes y/o dormitorios.
  - Tiene precio  (Obviamente, jeje) y no está en dólares.
 
-### Item
+## Item
 
 En base a lo anterior, tenemos que la estructura final de un Item será: 
 
@@ -48,7 +48,7 @@ En base a lo anterior, tenemos que la estructura final de un Item será:
 - Url
 - Información adicional (baños, años, etc)
 
-### Objetivo 
+## Objetivo 
 
 Con el scraper se busca responder las siguientes preguntas:
 
@@ -57,7 +57,7 @@ Con el scraper se busca responder las siguientes preguntas:
  - Distribución del costo del alquiler más expensas.
  - Zonas con más alquileres disponibles. 
 
-### Resultados
+## Resultados
 
 |Página| Items obtenidos |  Items descartados| Efectividad (%)
 |--|--|--|--|
@@ -68,11 +68,18 @@ Con el scraper se busca responder las siguientes preguntas:
 **Nota:** La mayoría de los items descartados se debe a que los precios estaban en dólares. 
 **Nota2 :** Los resultados de MercadoLibre se deben tomar cierto margen de error (dependiendo de las configuraciones del scraper), ya que la página bloquea cuando hay muchas solicitudes al mismo tiempo.
 
-### Gráficos
+## Gráficos
+
 
 Hola equipo de Prometeo, soy yo otra vez, como pueden ver, me gustan mucho los gráficos. ¿Qué cosas no?
 
-####  Apartamentos por Barrios
+---
+
+###  Apartamentos por Barrios
+
+---
+
+![Grafico de barras](https://github.com/isaac152/scraper_alquiler_argentina/blob/main/graphs/rents_per_region.png?raw=true)
 
 Como se puede ver, hay más oferta de apartamentos (en pesos) en Palermo, Belgrano, Caballito y Flores.
 
@@ -80,7 +87,13 @@ Estas zonas generalmente son asociadas a la clase media / alta y están cerca de
 
 **Nota:** Gran parte de los datos pertenecientes a "Otros" hacen referencia a zonas relacionadas a Palermo como *Botánico* o *Hollywood*
 
-#### Frecuencia de precios de alquileres.
+
+### Frecuencia de precios de alquileres.
+
+----
+
+![Histograma](https://raw.githubusercontent.com/isaac152/scraper_alquiler_argentina/main/graphs/normalize_histogram_distrubtion.png)
+
 
 Vamos con un gráfico más interesante.  Acá se calculó el precio del alquiler + expensas y organizó en un histograma con rangos de 10.000 ARS
 
@@ -95,7 +108,12 @@ Si nos vamos a la versión completa, el máximo aumenta hasta 4800$.
 **Nota:** Esta versión está normalizada, si prefiere ver la versión completa, puede revisar los archivos. 
 
 
-#### Superficie en relación a los ambientes. 
+### Superficie en relación a los ambientes. 
+
+---
+
+![Grafico de lineas](https://raw.githubusercontent.com/isaac152/scraper_alquiler_argentina/main/graphs/m2_neighborhood.png)
+
 
 Parece una tontería. Obviamente mientras más ambientes, más espacio. ¿Verdad?
 
@@ -109,7 +127,13 @@ Sobre todo si notamos la gran caída en relación a 1 ambiente y 2 ambientes en 
  
  La moraleja acá es, revisar tanto los ambientes como la cantidad de m2 a la hora de comparar apartamentos. 
 
-#### Distribución de M2 en los Barrios.
+
+### Distribución de M2 en los Barrios.
+
+---
+
+![Grafico de lineas](https://raw.githubusercontent.com/isaac152/scraper_alquiler_argentina/main/graphs/m2_distribution_line_chart.png)
+
 
 Uno de mis gráficos favoritos. 
 
@@ -121,7 +145,13 @@ También es curioso ver la diferencia tan grande entre los máximos y el promedi
 
 * **Chiste argentino:** Parece que Boca no es tan grande como decían, eh?* Sin embargo, es uno de los más homogéneos, en conjunto a Liniers. *
 
-#### Relación de superficie / precio
+
+### Relación de superficie / precio
+
+---
+
+![Grafico de lineas](https://raw.githubusercontent.com/isaac152/scraper_alquiler_argentina/main/graphs/m2_price_box_plot.png)
+
 
 Ahora sí, mi gráfico favorito. 
 
@@ -140,14 +170,13 @@ Si observamos la mitad de la caja de, Palermo, por ejemplo. Podemos ver que el p
 Podemos calcular que un alquiler en Palermo estaría, normalmente, en 80.000 ARS, osea 400$
 
 
-### Uso
+# Uso
 
 > Mucho bla bla bla, muestra qué tengo que hacer.
 
-Vale, vamos al grano.
+Vale, vamos al grano. Ejecuta el siguiente comando
 
 ```
-cd reto_scraping
 scrapy list | xargs -I {} -t scrapy crawl {} -O ./data/{}.json
 ```
 
@@ -163,7 +192,7 @@ Esto debería crear unos gráficos, en base a los json obtenidos anteriormente.
 
 
 
-## Flask APP
+# Flask APP
 
 Acá iría la explicación de la presentación y filtrado de datos en una web app con flask.
 
