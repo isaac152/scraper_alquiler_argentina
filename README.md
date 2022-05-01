@@ -65,8 +65,9 @@ Con el scraper se busca responder las siguientes preguntas:
 | `inmuebles.mercadolibre.com.ar` |1077|939|53.42% 
 | `properati.com.ar` |973|2216| 30.51%
 
-**Nota:** La mayoría de los items descartados se debe a que los precios estaban en dólares. 
-**Nota2 :** Los resultados de MercadoLibre se deben tomar cierto margen de error (dependiendo de las configuraciones del scraper), ya que la página bloquea cuando hay muchas solicitudes al mismo tiempo.
+**Nota:** La mayoría de los items descartados se deben a que los precios estaban en dólares. 
+
+**Nota2 :** En los resultados de MercadoLibre se deben tomar cierto margen de error (dependiendo de las configuraciones del scraper), ya que la página bloquea cuando hay muchas solicitudes al mismo tiempo. (Ver más adelante) 
 
 ## Gráficos
 
@@ -99,11 +100,11 @@ Vamos con un gráfico más interesante.  Acá se calculó el precio del alquiler
 
 Acá podemos ver que el rango más común está entre los 40.000 ARS  y los 90.000 ARS. Un equivalente más o menos a 200$ y 450$.
 
-El precio más común es de 50.000 ARS ( equivalente a 250$).  
+El precio aproximado más común es de 50.000 ARS ( equivalente a 250$).  
 
-En los casos extremos podemos ver que un alquiler puede salir entre el más barato en 10.000 ARS y 310.000 ARS, osea 50$ a 1550$.,
+En los casos extremos podemos ver que los precios van entre 10.000 ARS y 310.000 ARS,es decir, los apartamenos más baratos rondan entre los 50$ al mes y los más caros entre 1550$ al mes.
 
-Si nos vamos a la versión completa, el máximo aumenta hasta 4800$.
+Si nos vamos a la versión completa, el máximo aumenta hasta 4800$ al mes.
 
 **Nota:** Esta versión está normalizada, si prefiere ver la versión completa, puede revisar los archivos. 
 
@@ -121,9 +122,9 @@ Pues si observamos la línea del promedio y los valores mínimos, sí, coincide.
 
 Sobre todo si notamos la gran caída en relación a 1 ambiente y 2 ambientes en la línea del valor máximo.
  
- También podemos observar algo similar en la línea de valores mínimos en relación a 6 y 7 ambientes.
+ También podemos observar algo similar en la línea de valores mínimos en relación a 6 y 7 ambientes o 3 y 4 ambientes.
  
- Y por último observamos que no hay un cambio tan significativo en promedio entre 1 y 2 ambientes.
+ Y por último observamos que no hay un cambio tan notorio en promedio entre 1 y 2 ambientes.
  
  La moraleja acá es, revisar tanto los ambientes como la cantidad de m2 a la hora de comparar apartamentos. 
 
@@ -143,7 +144,8 @@ Se podría decir que es por su relación con respecto a los valores máximos, pe
 
 También es curioso ver la diferencia tan grande entre los máximos y el promedio. 
 
-* **Chiste argentino:** Parece que Boca no es tan grande como decían, eh?* Sin embargo, es uno de los más homogéneos, en conjunto a Liniers. *
+
+**Chiste argentino:** Parece que Boca no es tan grande como decían, eh?
 
 
 ### Relación de superficie / precio
@@ -167,8 +169,11 @@ Dicho de otra forma. Mientras más arriba la caja, más caro será ese alquiler 
 
 Si observamos la mitad de la caja de, Palermo, por ejemplo. Podemos ver que el precio por m2 (en la mediana) es de aproximadamente 1600 ARS.  Si tenemos en cuenta que Palermo tenía un promedio de 50 m2 ( ver gráficos anteriores).
 
-Podemos calcular que un alquiler en Palermo estaría, normalmente, en 80.000 ARS, osea 400$
+Podemos calcular que un alquiler en Palermo estaría, en promedio, en 80.000 ARS, osea 400$.
 
+Por otro lado, si tomamos los valores mínimos de m2 en Palermo (25-30), obtendriamos que el precio sería de 40.000 ARS. 
+
+**Nota:** Estos datos y gráficos deben ser usados únicamente como referencia. Los datos no representan una muestra exacta del estado de los alquileres en Buenos aires.
 
 # Uso
 
