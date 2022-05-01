@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>{% block title %}  {% endblock %}</title>
+    {% block head %}
+    {% endblock %}
+</head>
+<header class="bg-stone-800 flex rounded-b-lg shadow-md justify-between px-5">
+    <img class="w-20 my-5" src="https://joinignitecommunity.com//wp-content/uploads/2022/03/ignitebyprometeo.png">
+    <nav class="text-white flex list-none text-xl my-auto">
+        <li class="mr-8">
+            <a class="text-center block rounded py-2 px-4 hover:bg-stone-500" href="{{url_for('index')}}"> Home</a>
+        </li>
+        <li  class="mr-8">
+            <a class="text-center block rounded py-2 px-4 hover:bg-stone-500" href="{{url_for('all_apartaments')}}"> Listado completo</a>
+        </li>
+    </nav>
+</header>
+<body class="bg-stone-700 ">
+    {% block body %}
+    {% endblock %}
+    {% block javascript %}
+    {% endblock %}
+</body>
+</html>

@@ -1,0 +1,81 @@
+{% extends "./base.html" %}
+{% block head %}
+
+{% endblock %}
+{% block tittle %}Prometeo reto 002 - Comparador{% endblock %}
+
+{% block body %}
+
+<div class="flex">
+    <div class="bg-white rounded-md w-1/2 m-4 flex flex-col justify-evenly">
+        <h2 class="my-5 text-2xl text-center"> Mejores apartamentos en relación precio/m2</h2> 
+        {% for apartament in m2_price %}
+        <div class=" bg-white rounded-md shadow-md flex mx-2 my-5 border-2 ">
+            <div class="h-full w-1/2">
+                <img  class="h-full" src="{{apartament.images[0]}}">
+            </div>
+            <div class="w-1/2 mx-auto text-center my-auto">
+                <h2 class="text-2xl font-bold ">Ubicación</h2>
+                <p class="text-xl">{{apartament.location}}</p>
+                <p class="text-lg">{{apartament.address}}</p>
+                <h2 class="text-2xl font-bold ">Precio: </h2>
+                <p class="font-bold text-xl">${{apartament.price}}</p>
+                {% if apartament.expenses %}
+                <p class="text-lg">Expensas: {{apartament.expenses}}</p>
+                {% endif %}
+                <h2 class="text-2xl font-bold ">Superficie:</h2>
+                <p class="text-lg">{{apartament.m2}} m2  | 🛏️ {{apartament.rooms}} Ambientes </p>
+                <hr>
+                {% for extra in apartament.extras %}
+                <div class="list-none space-x-5">
+                    <li>
+                        {{extra}}
+                    </li>
+                </div>        
+                {% endfor %}
+            
+                <div class=" w-fit mx-auto">
+        <a class="text-sm block text-center rounded-md bg-red-500 font-bold text-red-200 hover:bg-red-600 p-2" href="{{apartament.url}}"> Visitar página </a>
+    </div>
+            </div> 
+        </div>
+    {% endfor %}
+    </div>
+    
+    <div class="bg-white rounded-md w-1/2 m-4 flex flex-col justify-evenly">
+        <h2 class="my-5 text-2xl text-center"> Apartamentos más baratos con más m2</h2> 
+        {% for apartament in cheapers %}
+        <div class=" bg-white rounded-md shadow-md flex mx-2 my-5 border-2 ">
+            <div class="h-full w-1/2">
+                <img  class="h-full" src="{{apartament.images[0]}}">
+            </div>
+            <div class="w-1/2 mx-auto text-center my-auto">
+                <h2 class="text-2xl font-bold ">Ubicación</h2>
+                <p class="text-xl">{{apartament.location}}</p>
+                <p class="text-lg">{{apartament.address}}</p>
+                <h2 class="text-2xl font-bold ">Precio: </h2>
+                <p class="font-bold text-xl">${{apartament.price}}</p>
+                {% if apartament.expenses %}
+                <p class="text-lg">Expensas: {{apartament.expenses}}</p>
+                {% endif %}
+                <h2 class="text-2xl font-bold ">Superficie:</h2>
+                <p class="text-lg">{{apartament.m2}} m2  | 🛏️ {{apartament.rooms}} Ambientes </p>
+                <hr>
+                {% for extra in apartament.extras %}
+                <div class="list-none space-x-5">
+                    <li>
+                        {{extra}}
+                    </li>
+                </div>        
+                {% endfor %}
+            
+                <div class=" w-fit mx-auto">
+        <a class="text-sm block text-center rounded-md bg-red-500 font-bold text-red-200 hover:bg-red-600 p-2" href="{{apartament.url}}"> Visitar página </a>
+    </div>
+            </div> 
+        </div>
+    {% endfor %}
+    </div>
+
+</div>
+{% endblock %}

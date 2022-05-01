@@ -4,4 +4,4 @@ numpy
 pandas
 Scrapy
 Unidecode
-
+flask

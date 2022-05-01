@@ -188,19 +188,36 @@ Una vez terminado ejecuta el siguiente comando:
 ```
 python -m main
 ```
-Esto debería crear unos gráficos, en base a los json obtenidos anteriormente. 
+Esto debería crear unos gráficos y levantar un servidor en flask al cual se podrá acceder con la siguiente dirección **http://localhost:5000/** , en base a los json obtenidos anteriormente. 
 
+**Nota:** Si solo le interesa ver los gráficos puede ejecutar: 
 
+```
+python -m graphs
+```
 
-# Flask APP
+## Flask APP
 
-Acá iría la explicación de la presentación y filtrado de datos en una web app con flask.
+Una forma sencilla de presentar la información y de mostrar una comparación entre los alquileres.
 
-...
+En el home se encuentra un selector para comparar los mejores apartamentos en relación a precio y m2 según el barrio.
 
-....
+A si mismo, también se encuentran 3 opciones aleatorias de toda la lista de apartamentos.
 
-![meme](https://pbs.twimg.com/media/Dxh-29XWsAAllD4.jpg)
+En la página de Listado completo se pueden observar todos los apartamentos (dah) pero también se puede filtrar por barrio según la url.
 
-[Contexto del meme]( https://www.youtube.com/watch?v=knQ1agY_lWs)
+**Nota:** Para entender mejor el diseño de la página, recomiendo revisar el error 404.
 
+Ejemplo: 
+
+http://localhost:5000/all -> Mostrará el listado completo
+
+http://localhost:5000/all/Almagro ->Mostrará el listado completo de apartamentos en Almagro
+
+### Ejemplos 
+
+![index](https://i.imgur.com/AVNO08v.png)
+
+![todos](https://i.imgur.com/e9K1bWJ.png)
+
+![todos en almagro](https://i.imgur.com/oajCjb7.png)

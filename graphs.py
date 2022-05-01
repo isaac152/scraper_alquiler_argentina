@@ -1,8 +1,6 @@
 #Python imports
 from typing import List,Dict,Tuple
 from statistics import mean
-import json
-from glob import glob
 
 #External imports
 import pandas as pd
@@ -11,19 +9,7 @@ import matplotlib.pyplot as plt
 
 #Local imports
 from models.apartament import Apartament
-
-#Constants
-JSON_PATH = './data/*.json'
-GRAPH_PATH = './graphs'
-
-def get_data()->List[Apartament]:
-    """Extract the data from folder with the json files"""
-    data= []
-    for filename in glob(JSON_PATH):
-        with open(filename) as p:
-            data_j = json.load(p)
-        data.extend(data_j)
-    return [Apartament(d) for d in data]     
+from utils import get_data,GRAPH_PATH
 
 def most_rents_per_region_plot_bar(apartaments:List[Apartament])->None:
     """Create a bar graph amount rents / neighborhood """
